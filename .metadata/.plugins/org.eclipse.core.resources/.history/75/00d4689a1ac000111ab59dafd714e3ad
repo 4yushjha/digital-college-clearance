@@ -1,0 +1,6 @@
+package in.ac.mitmeerut.clearance.enums;
+
+public enum Role {
+	SRUDENT,STAFF,ADMIN
+	
+}

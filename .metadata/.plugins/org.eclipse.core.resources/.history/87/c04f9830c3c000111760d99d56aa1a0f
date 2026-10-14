@@ -1,0 +1,5 @@
+package in.ac.mitmeerut.clearance.exception;
+
+public class ClearanceAuthorityNotFoundException {
+
+}

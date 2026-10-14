@@ -1,0 +1,5 @@
+package in.ac.mitmeerut.clearance.repository;
+
+public interface StaffRepository {
+
+}

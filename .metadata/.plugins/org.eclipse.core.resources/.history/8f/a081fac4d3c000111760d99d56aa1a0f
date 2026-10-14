@@ -1,0 +1,88 @@
+package in.ac.mitmeerut.clearance.service;
+
+import in.ac.mitmeerut.clearance.entity.Student;
+import in.ac.mitmeerut.clearance.entity.User;
+import in.ac.mitmeerut.clearance.exception.StudentNotFoundException;
+import in.ac.mitmeerut.clearance.exception.UserNotFoundException;
+import in.ac.mitmeerut.clearance.repository.StudentRepository;
+import in.ac.mitmeerut.clearance.repository.UserRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class StudentService {
+
+    private final StudentRepository studentRepository;
+    private final UserRepository userRepository;
+
+    public StudentService(
+            StudentRepository studentRepository,
+            UserRepository userRepository) {
+
+        this.studentRepository = studentRepository;
+        this.userRepository = userRepository;
+    }
+
+    // Create Student
+    public Student saveStudent(Student student) {
+
+        User user = userRepository.findById(student.getUserId())
+                .orElseThrow(() ->
+                        new UserNotFoundException(
+                                "User not found with id: " + student.getUserId()
+                        )
+                );
+
+        student.setUser(user);
+
+        return studentRepository.save(student);
+    }
+
+    // Get all Students
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
+
+    // Get Student by ID
+    public Student getStudentById(Long userId) {
+
+        return studentRepository.findById(userId)
+                .orElseThrow(() ->
+                        new StudentNotFoundException(
+                                "Student not found with user id: " + userId
+                        )
+                );
+    }
+
+    // Update Student
+    public Student updateStudent(Long userId, Student student) {
+
+        Student existingStudent = studentRepository.findById(userId)
+                .orElseThrow(() ->
+                        new StudentNotFoundException(
+                                "Student not found with user id: " + userId
+                        )
+                );
+
+        existingStudent.setRollNumber(student.getRollNumber());
+        existingStudent.setCourse(student.getCourse());
+        existingStudent.setBranch(student.getBranch());
+        existingStudent.setSemester(student.getSemester());
+
+        return studentRepository.save(existingStudent);
+    }
+
+    // Delete Student
+    public void deleteStudent(Long userId) {
+
+        Student existingStudent = studentRepository.findById(userId)
+                .orElseThrow(() ->
+                        new StudentNotFoundException(
+                                "Student not found with user id: " + userId
+                        )
+                );
+
+        studentRepository.delete(existingStudent);
+    }
+}

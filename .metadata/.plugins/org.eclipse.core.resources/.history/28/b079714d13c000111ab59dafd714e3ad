@@ -1,0 +1,41 @@
+package in.ac.mitmeerut.clearance.entity;
+
+import enums.ClearanceStatus;
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "clearance_verifications")
+public class ClearanceVerification {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "clearance_request_id", nullable = false)
+    private ClearanceRequest clearanceRequest;
+
+    @ManyToOne
+    @JoinColumn(name = "authority_id", nullable = false)
+    private ClearanceAuthority authority;
+
+    @ManyToOne
+    @JoinColumn(name = "verified_by")
+    private Staff verifiedBy;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ClearanceStatus status;
+
+    private String remarks;
+
+    private LocalDateTime verifiedDate;
+
+    public ClearanceVerification() {
+        this.status = ClearanceStatus.PENDING;
+    }
+
+    // Getters and Setters
+}

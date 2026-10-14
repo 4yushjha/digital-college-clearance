@@ -1,0 +1,78 @@
+package in.ac.mitmeerut.clearance.entity;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+
+import in.ac.mitmeerut.clearance.enums.ClearanceStatus;
+
+@Entity
+@Table(name = "clearance_requests")
+public class ClearanceRequest {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+    private LocalDateTime requestDate;
+
+    @Enumerated(EnumType.STRING)
+    private ClearanceStatus overallStatus;
+
+    private LocalDateTime completionDate;
+
+    public ClearanceRequest() {
+        this.requestDate = LocalDateTime.now();
+        this.overallStatus = ClearanceStatus.PENDING;
+    }
+    
+    // Getters and Setters
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	public LocalDateTime getRequestDate() {
+		return requestDate;
+	}
+
+	public void setRequestDate(LocalDateTime requestDate) {
+		this.requestDate = requestDate;
+	}
+
+	public ClearanceStatus getOverallStatus() {
+		return overallStatus;
+	}
+
+	public void setOverallStatus(ClearanceStatus overallStatus) {
+		this.overallStatus = overallStatus;
+	}
+
+	public LocalDateTime getCompletionDate() {
+		return completionDate;
+	}
+
+	public void setCompletionDate(LocalDateTime completionDate) {
+		this.completionDate = completionDate;
+	}
+
+  
+    
+    
+}
