@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Digital Clearance</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">DC</div>
+
+            <div>
+                <h5>DigitalClear</h5>
+                <span>College Portal</span>
+            </div>
+        </div>
+
+        <div class="menu-label">MAIN MENU</div>
+
+        <nav class="navigation">
+
+            <a href="#" class="nav-link active">
+                <span class="nav-icon">▦</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-icon">＋</span>
+                Apply for Clearance
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-icon">◷</span>
+                Track Clearance
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-icon">▤</span>
+                Request History
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <div class="help-icon">?</div>
+
+                <h6>Need Help?</h6>
+
+                <p>Contact your college administration for assistance.</p>
+
+                <a href="#">Get Support →</a>
+            </div>
+
+            <a href="#" class="nav-link logout">
+                <span class="nav-icon">↪</span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+                <h4>Student Dashboard</h4>
+                <p>Manage and track your college clearance.</p>
+            </div>
+
+            <div class="profile">
+
+                <div class="notification">♧</div>
+
+                <div class="avatar">RK</div>
+
+                <div class="profile-info">
+                    <h6>Rahul Kumar</h6>
+                    <span>Student</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section">
+
+            <div>
+                <span class="welcome-label">STUDENT PORTAL</span>
+
+                <h1>Welcome back, Rahul! 👋</h1>
+
+                <p>
+                    Keep track of your clearance journey and complete
+                    your requirements before graduation.
+                </p>
+
+                <a href="#" class="primary-button">
+                    + Apply for Clearance
+                </a>
+            </div>
+
+            <div class="welcome-decoration">
+                <div class="document-icon">✓</div>
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY CARDS -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+
+                <div class="card-top">
+                    <span>Total Requests</span>
+                    <div class="card-icon blue">▤</div>
+                </div>
+
+                <h2>02</h2>
+
+                <p class="card-description">
+                    All clearance requests
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="card-top">
+                    <span>Completed</span>
+                    <div class="card-icon green">✓</div>
+                </div>
+
+                <h2>00</h2>
+
+                <p class="card-description">
+                    Successfully cleared
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="card-top">
+                    <span>Pending</span>
+                    <div class="card-icon orange">◷</div>
+                </div>
+
+                <h2>02</h2>
+
+                <p class="card-description">
+                    Awaiting verification
+                </p>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="card-top">
+                    <span>Rejected</span>
+                    <div class="card-icon red">!</div>
+                </div>
+
+                <h2>00</h2>
+
+                <p class="card-description">
+                    Requires attention
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLEARANCE PROGRESS AND PROFILE -->
+        <section class="content-grid">
+
+            <!-- CLEARANCE PROGRESS -->
+            <div class="panel clearance-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h5>Clearance Progress</h5>
+                        <p>Your department-wise clearance status</p>
+                    </div>
+
+                    <span class="status-badge pending">In Progress</span>
+                </div>
+
+
+                <div class="progress-overview">
+
+                    <div class="progress-circle">
+                        <div>
+                            <strong>0%</strong>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+
+                    <div class="progress-text">
+                        <h6>You're getting started!</h6>
+
+                        <p>
+                            Complete your departmental verifications
+                            to finish the clearance process.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="department-list">
+
+                    <div class="department-row">
+
+                        <div class="department-info">
+                            <div class="department-icon library">L</div>
+
+                            <div>
+                                <h6>Library</h6>
+                                <span>Library clearance</span>
+                            </div>
+                        </div>
+
+                        <span class="status-badge pending">Pending</span>
+
+                    </div>
+
+
+                    <div class="department-row">
+
+                        <div class="department-info">
+                            <div class="department-icon hostel">H</div>
+
+                            <div>
+                                <h6>Hostel</h6>
+                                <span>Hostel clearance</span>
+                            </div>
+                        </div>
+
+                        <span class="status-badge pending">Pending</span>
+
+                    </div>
+
+
+                    <div class="department-row">
+
+                        <div class="department-info">
+                            <div class="department-icon accounts">A</div>
+
+                            <div>
+                                <h6>Accounts</h6>
+                                <span>Fee clearance</span>
+                            </div>
+                        </div>
+
+                        <span class="status-badge pending">Pending</span>
+
+                    </div>
+
+
+                    <div class="department-row">
+
+                        <div class="department-info">
+                            <div class="department-icon academic">C</div>
+
+                            <div>
+                                <h6>Academic Department</h6>
+                                <span>Academic clearance</span>
+                            </div>
+                        </div>
+
+                        <span class="status-badge pending">Pending</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDENT PROFILE -->
+            <div class="panel student-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h5>Student Information</h5>
+                        <p>Your registered details</p>
+                    </div>
+
+                    <span class="profile-symbol">●</span>
+                </div>
+
+
+                <div class="student-profile">
+
+                    <div class="large-avatar">RK</div>
+
+                    <h4>Rahul Kumar</h4>
+
+                    <span class="student-course">B.Tech · CSE</span>
+
+                </div>
+
+
+                <div class="student-details">
+
+                    <div class="detail-row">
+                        <span>Roll Number</span>
+                        <strong>MIT2024001</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Course</span>
+                        <strong>BTech</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Branch</span>
+                        <strong>Computer Science</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Semester</span>
+                        <strong>5th Semester</strong>
+                    </div>
+
+                </div>
+
+
+                <a href="#" class="secondary-button">
+                    View Student Profile →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT REQUESTS -->
+        <section class="panel requests-panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h5>Recent Clearance Requests</h5>
+                    <p>Overview of your latest requests</p>
+                </div>
+
+                <a href="#" class="view-all">View All →</a>
+
+            </div>
+
+
+            <div class="table-responsive">
+
+                <table class="table request-table">
+
+                    <thead>
+                    <tr>
+                        <th>REQUEST ID</th>
+                        <th>REQUEST DATE</th>
+                        <th>STUDENT</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr>
+                        <td>#CLR-002</td>
+                        <td>14 Oct 2026</td>
+                        <td>Rahul Kumar</td>
+
+                        <td>
+                            <span class="status-badge pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="#" class="details-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>#CLR-001</td>
+                        <td>10 Oct 2026</td>
+                        <td>Rahul Kumar</td>
+
+                        <td>
+                            <span class="status-badge pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="#" class="details-link">View Details</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>© 2026 Digital College Clearance System</p>
+            <p>Designed for a simpler clearance process.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

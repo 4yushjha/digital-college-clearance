@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Digital College Clearance</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="login-body">
+
+    <div class="login-container">
+
+        <!-- Left Section -->
+        <div class="login-left">
+
+            <div class="brand">
+                <div class="brand-icon">DC</div>
+                <h2>Digital Clearance</h2>
+            </div>
+
+            <div class="welcome-content">
+                <p class="welcome-label">WELCOME TO YOUR CAMPUS</p>
+
+                <h1>College Clearance<br>Made Simple.</h1>
+
+                <p>
+                    Manage your college clearance process in one place.
+                    Track departmental approvals and move closer to
+                    completing your academic journey.
+                </p>
+
+                <div class="feature-item">
+                    <span>✓</span>
+                    <div>
+                        <strong>Easy Application</strong>
+                        <p>Submit and manage clearance requests online.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span>✓</span>
+                    <div>
+                        <strong>Real-Time Tracking</strong>
+                        <p>Monitor your clearance progress in one place.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-footer">
+                © 2026 Digital College Clearance System
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+        <div class="login-right">
+
+            <div class="login-form-container">
+
+                <div class="mobile-brand">
+                    <div class="brand-icon">DC</div>
+                    <h2>Digital Clearance</h2>
+                </div>
+
+                <p class="form-label-top">YOUR CAMPUS PORTAL</p>
+
+                <h2>Welcome Back!</h2>
+
+                <p class="login-subtitle">
+                    Enter your credentials to access your account.
+                </p>
+
+                <!-- Login Form -->
+                <form th:action="@{/login}" method="post">
+
+                    <div class="mb-4">
+                        <label for="email" class="form-label">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control login-input"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your college email"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control login-input"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required>
+                    </div>
+
+                    <div class="login-options">
+                        <label class="remember-option">
+                            <input type="checkbox" name="remember-me">
+                            <span>Remember me</span>
+                        </label>
+
+                        <a href="#" class="forgot-password">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        Sign In <span>→</span>
+                    </button>
+
+                </form>
+
+                <div class="login-divider">
+                    <span>SECURE CAMPUS ACCESS</span>
+                </div>
+
+                <p class="login-help">
+                    Having trouble accessing your account?
+                    Contact your college administrator.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
